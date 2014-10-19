@@ -1,5 +1,11 @@
 <div class="row">
-  <ui-gmap-google-map center="map.center" zoom="map.zoom"></ui-gmap-google-map>
+  <ui-gmap-google-map center="map.center" zoom="map.zoom">
+    <ui-gmap-layer type='KmlLayer'
+    options='kml.options'
+    show='kml.show'
+>
+</ui-gmap-layer>
+  </ui-gmap-google-map>
 
   <form role="form">
     <div class="form-group">
@@ -14,8 +20,12 @@
       <label for="zoom">Zoom</label>
       <input type="text" id="zoom" class="form-control" ng-model="map.zoom">
     </div>
-
+    <div class="form-group">
+      <label for="kml_url">KML URL</label>
+      <input type="text" id="kml" class="form-control" ng-model="kml.options.url">
+    </div>
   </form>
+
 
 
 </div>

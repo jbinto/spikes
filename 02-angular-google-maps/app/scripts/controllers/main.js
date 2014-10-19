@@ -17,10 +17,17 @@ angular.module('02AngularGoogleMapsApp')
 
     $scope.map = {
       center: {
-        latitude: 45,
-        longitude: -73
+        latitude: 43.6,
+        longitude: -79.3
       },
       zoom: 8
+    };
+
+    $scope.kml = {
+      show: true,
+      options: {
+        url: 'http://staging.416.bike/bikeways/7072.kml'
+      }
     };
 
   });
