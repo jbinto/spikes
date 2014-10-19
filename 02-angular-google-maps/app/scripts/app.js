@@ -10,12 +10,8 @@
  */
 angular
   .module('02AngularGoogleMapsApp', [
-    'ngAnimate',
-    'ngCookies',
-    'ngResource',
     'ngRoute',
-    'ngSanitize',
-    'ngTouch'
+    'google-maps'.ns()
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -30,4 +26,13 @@ angular
       .otherwise({
         redirectTo: '/'
       });
-  });
+  })
+  .config(['GoogleMapApiProvider'.ns(), function (GoogleMapApi) {
+    GoogleMapApi.configure({
+      //    key: 'your api key',
+      v: '3.17',
+      libraries: 'weather,geometry,visualization'
+    });
+  }])
+
+  ;
